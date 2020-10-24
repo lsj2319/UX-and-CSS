@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Using Multiple CSS3 Animations</title>
+</head>
+<body><h1>Using Multiple CSS3 Animations</h1>
+    <p>This is part 4 of a series on CSS3 Animations. 
+        This time we will cover how display multiple animations on a screen using CSS3 Animations. </p>
+    <h2>A CSS Animation is not an Island</h2>
+    <p>So far in this series we have only practiced animating objects by themselves. While this is good for some purposes like alerts or mobile navigation display, if we want to start using CSS3 for animating infographics or more complex features will will need to add more than one animation to a page.</p>
+    <ul>
+    <li>Wrap animated elements in containers to prevent weird overlap or display.</li>
+    <li>The order in which your animations are declared in the CSS files does not matter, the timing coordinates what happens when.</li>
+    <li>Performance of the page will be affected more by what you are asking the CSS to do than by how many animations you have, but stacking 15 animated sets of charts will have an effect. The <a href="https://developers.google.com/web/fundamentals/design-and-ui/animations/animations-and-performance?hl=en">Google Developer site</a> has great tips on performance. The most important things to know for now are that using animation to change page layout or to "paint" objects strains performance the most.</li>
+    </ul>
+    <h2>Build the HTML Page</h2>
+    <p>First we will create a basic HTML page. Within the body of the page we need to add a text heading, a paragraph, and a div that will act as a button.<br />&lt;section&gt;<br />&lt;div&gt;<br />&lt;h2&gt;Howdy&lt;/h2&gt;&lt;/div&gt;<br />&lt;div&gt;<br />&lt;p&gt;Let's have fun with CSS3 Animations, yeah?&lt;/p&gt;<br />&lt;/div&gt;<br />&lt;div class="funglow"&gt;&lt;a href="#"&gt;Join the fun&lt;/a&gt;<br />&lt;/div&gt;<br />&lt;/section&gt;</p>
+    <h2>Set up the CSS</h2>
+    <p>After setting up the HTML we will add attributes and properties to the CSS elements we want to display. Notice that the animation name is declared as a value of the animation or animation-name properties.</p>
+    <p>h2 {<br />color: green;<br />font-family: verdana;<br />font-weight: 300;<br />font-size: 36px;<br />text-align: center;<br />text-transform: uppercase;<br />animation-duration: 2s;<br />animation-name: slideInRight;<br />-webkit-animation-duration: 2s;<br />-webkit-animation-name: slideInRight;<br />margin-top: 100px;<br />}</p>
+    <p>/*a simple paragraph but we could easily animate it if we wanted to */</p>
+    <p>p {<br />text-align: center;<br />}</p>
+    <p>/* setting the link color of the page and removing the underline. For production sites I would make a separate class for links in button shapes or containers. */</p>
+    <p>a {<br />text-decoration: none;<br />color: yellow;<br />text-align: center;<br />}</p>
+    <p>/* next create a class for the buttony rectangle we will be animating. This is quick and dirty and I am doing an evil thing by using absolute positioning for a class. Do not do this on production sites or you will be eaten by a grue. */</p>
+    <p>.funglow {<br />position: absolute;<br />top: 80%;<br />left: 30%;<br />align: center;<br />color: yellow;<br />width: 200px;<br />height: 60px;<br />vertical-align: middle;<br />line-height: 60px;<br />background-color: green;<br />font-family: verdana;<br />font-weight: 200;<br />font-size: 20px;<br />text-align: center;<br />text-transform: uppercase;<br />padding: 5px;<br />animation: 6s colorChange;<br />-webkit-animation: 6s colorChange;<br />margin: 0, auto;<br />}</p>
+    <p>/*now it is time for some keyframes fun. This is where the magic happens. First I am repeating an example we explored in part 3 of this series. */</p>
+    <p>@keyframes slideInRight {<br />from {<br />margin-left: 100%;<br />width: 200%;<br />}<br />to {<br />margin-left: 0%;<br />width: 100%;<br />}<br />}</p>
+    <p>@-webkit-keyframes slideInRight {<br />from {<br />margin-left: 100%;<br />width: 200%;<br />}<br />to {<br />margin-left: 0%;<br />width: 100%;<br />}<br />}</p>
+    <p>/* Here is a new keyframe called "colorChange". The only property we are changing is the background-color. Remember we specified the animation duration value earlier in the funglow class. */</p>
+    <p>@keyframes colorChange {<br />from {<br />background-color: green;<br />}<br />to {<br />background-color: #6600cc;<br />}<br />}</p>
+    <p>@-webkit-keyframes colorChange {<br />from {<br />background-color: green;<br />}<br />to {<br />background-color: #6600cc;<br />}<br />}</p>
+    <p> </p>
+    <p>You should see the text fly in and the background color of the button cycle from green to blue and back to blue again.</p>
+    <h2>Here is the full JSFiddle:</h2>
+    <p><a href="https://jsfiddle.net/ljordanatl/swra9pwq/45/">https://jsfiddle.net/ljordanatl/swra9pwq/45/</a></p>
+    <p><script src="//jsfiddle.net/ljordanatl/swra9pwq/44/embed/html,css,result/dark/" async=""></script></p>
+    <p> </p>
+    <p>We are going to do more complex animations next time. We will alter a shape like we would for a nav overlay for a mobile  view of a site. We will also play more with using transform.</p>
+    <h2> </h2></body></html>
