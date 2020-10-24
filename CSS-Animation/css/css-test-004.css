@@ -1,0 +1,87 @@
+h2 {
+  color: green;
+  font-family: verdana;
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  animation-duration: 2s;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: slideInRight;
+  margin-top: 100px;
+}
+
+p {
+  text-align: center;
+  animation: SlideInLeft 2s;
+  -webkit-animation: SlideInLeft 2s;
+}
+
+a {
+  text-decoration: none;
+  color: yellow;
+  text-align: center;
+}
+
+.funglow {
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  align: center;
+  color: yellow;
+  width: 200px;
+  height: 60px;
+  vertical-align: middle;
+  line-height: 60px;
+  background-color: green;
+  font-family: verdana;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+  animation: 6s colorChange;
+  -webkit-animation: 6s colorChange;
+  margin: 0, auto;
+}
+
+@keyframes slideInRight {
+  from {
+    margin-left: 100%;
+    width: 200%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    margin-left: 100%;
+    width: 200%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes colorChange {
+  from {
+    background-color: green;
+  }
+  to {
+    background-color: #6600cc;
+  }
+}
+
+@-webkit-keyframes colorChange {
+  from {
+    background-color: green;
+  }
+  to {
+    background-color: #6600cc;
+  }
+}
