@@ -1,0 +1,38 @@
+<p>This is part 3 of a series on CSS3 Animations. This time we will cover how to move text using CSS3 Animations. You can visit <a href="https://www.leesjordanstudio.com/blog/your-first-css-animation/">part 1</a> and <a href="https://www.leesjordanstudio.com/blog/moving-objects-with-css3-animation/">part 2</a> of this series to catch up.</p>
+<h2><!--more--></h2>
+<h2>Previously on this CSS Animations Series</h2>
+<p>Previously we talked about the two parts of CSS animations in post 1 of this series but here is a recap:</p>
+<p>CSS Animations - There are two parts:</p>
+<p>Keyframes - specifies stages and styles of animation<br />Animation properties - tie the @keyframes to a CSS element and [define how] the element is animated</p>
+<p>Keyframes<br />These are the bedrock of your CSS animation. Key frames control the appearance of the animation at every position of the animation timeline.</p>
+<p>Name - this is what the animation is called. Example: slideInRight</p>
+<p> </p>
+<h2>Text Animation Time!</h2>
+<p>Okay we will talk about CSS Animations and text a bit more later in this tutorial, but let’s animate some text! I create a jsfiddle if you want to see the example in action using a service since sometimes embedding things can be a bit unpredictable. [<a href="https://jsfiddle.net/ljordanatl/dqy77oun/2/">jsfiddle link</a>]</p>
+<p>Let’s start by specifying the HTML. Create a simple div container to hold the text, then place the text in an h2 tag like below:<br />&lt;div&gt;&lt;h2&gt;Howdy&lt;/h2&gt;&lt;/div&gt;</p>
+<p>Next comes the heavy lifting in the CSS. I recommend using an external CSS file for production/live sites but for experimenting you can use an embedded style sheet []. Lets’ add some properties to the h2 element in our CSS. For this example we will name the animation “slideInRight”.</p>
+<p>h2 {<br />color: green;<br />font-family: verdana;<br />font-weight: 300;<br />font-size: 36px;<br />text-align: center;<br />text-transform: uppercase;<br />animation-duration:2s;<br />animation-name: slideInRight;<br />-webkit-animation-duration:2s;<br />-webkit-animation-name: slideInRight;<br />margin-top: 100px;<br />}</p>
+<p>After we declare our element we need to specify keyframes. I am going to use “from” and “to” since I won’t be adding additional animation at any other stage (this time). Since our text will be sliding in from the right, we set the margin-left to at least 100%. Since I set the animation duration to 2 seconds I set the width to 200%. I want a pretty quick slide in effect. The final stage (to) is where I specify that the margin-left should be reduced to 0% and the width to 100%. This allows us to change the position of the text relatively, which is always better than absolute positioning for responsive/mobile first design.</p>
+<p>@keyframes slideInRight{<br />from {<br />margin-left:100%;<br />width:200%;<br />}<br />to {<br />margin-left:0%;<br />width:100%;<br />}</p>
+<p>}<br />@-webkit-keyframes slideInRight{<br />from{<br />margin-left:100%;<br />width:200%;<br />}</p>
+<p>to {<br />margin-left:0%;<br />width:100%;<br />}</p>
+<p>}<br />Don’t forget that your from and to stages have their own opening and closing brackets and are nested within your @keyframes brackets. Now if you have the CSS and HTML code saved in an HTML file and open it in your browser you should see the word “Howdy”slide in from the right side of the screen.</p>
+<p> </p>
+<h2>More about CSS 3 Animations</h2>
+<p>Stages - Animations are broken into stages - like rocket launches or cooking recipes, they are steps marking progress and time. Percentages are used for each stage. 0% is the beginning stage. 100% is the end of the animation. You can also use “from” for ‘0%’ and “to” for ‘100%’ if you just want to specify the beginning and end stages. You can have as many stages in between the beginning and ending stages as you like.</p>
+<p>CSS Properties - Properties like position, size and color must be defined for each stage of the animation timeline where there is a change. Example: Color can change but size of a box or font may stay the same.</p>
+<p>Where do key frames go?<br />@keyframes should be added to a CSS file after elements.<br />// example:</p>
+<p>.myFakeClass{</p>
+<p>color: #333333;animation: slideOut, 3s;}</p>
+<p>@keyframe textflyin<br />@keyframe textflyout{ 0%{margin-left:0; width:100%;}</p>
+<p>100%{ margin-left:100%; width:300%}}<br />Tip: I like to create a template like 0%{} 100%{} before I add properties. That way I do not forget any brackets.<br />Animation properties tie your key frames to your elements<br />Animation properties tell what should happen, how the animation should occur. Keyframes define when.</p>
+<h2>Where do animation properties go?</h2>
+<p>The animation properties need to be added to CSS selectors/elements that will be animated. There are two required animation properties:<br />- animation-name - your name for the animation that you defined in the key frames<br />- Animation-duration - how long the animation is in seconds or milliseconds. (Use s like 25s or ms for milliseconds like 150ms)<br />** You can use shorthand to declare both the name and the animation duration. **<br />// here in a CSS file we list a div element then apply properties to it:</p>
+<p>div{<br />animation-duration:2s;<br />animation-name:SlideInRight;<br />}</p>
+<p>// shorthand syntax<br />div{<br />animation: SlideInRight 2s;<br />}</p>
+<p>Using Animation Shorthand syntax effectively<br />- You can use shorthand syntax but it must be done in a specific order to work right.</p>
+<p>animation: [animation-name] [animation-duration] [animation-timing-function]<br />[animation-delay] [animation-iteration-count] [animation-direction]<br />[animation-fill-mode] [animation-play-state];</p>
+<p>You must always list the animation-name and animation-duration.</p>
+<p>Use the -webkit prefix as shown in the examples earlier in this tutorial to make sure the animation will play in all modern browsers.</p>
+<p> </p>
+<p>Now that you know a few secrets about moving text, you can have it appear and leave the screen by changing the margins and width. Experiment with changing the margin, margin-right, margin-bottom and margin-top for different effects.  We will get more in depth with fine tuning easing and other forms of animation control next time.</p>
