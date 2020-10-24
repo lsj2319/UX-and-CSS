@@ -1,0 +1,33 @@
+<p>CSS Animations were introduced with the CSS3 specification and give designers and developers a lightweight way to enhance digital experiences. No Javascript, expensive software or other programming languages are required. All that is needed is a modern browser and a text editor. Today we'll create a CSS animation that has a big and little div.<br /><!--more--></p>
+<h2>Important things to know about CSS Animations</h2>
+<ul>
+<li>Change is gradual from one style to the next</li>
+<li>An unlimited number of CSS properties can be changed an unlimited number of times, but too many can affect performance.</li>
+<li>Elements such as buttons, divs and text can be animated.</li>
+<li>Keyframes must be declared to use CSS3 animations.</li>
+<li>The styles for each element being animated must be stored in a keyframe for animation</li>
+</ul>
+<h2>Advantages</h2>
+<ul>
+<li>Animation without Javascript or other programming languages</li>
+<li>Supported by all modern browsers</li>
+<li>Easily scaled for different devices using media queries</li>
+<li>Can use percentages for finer control of timing/changes</li>
+<li>Use of whatever color format desired (RGBA, Hex, etc)</li>
+<li>Use fonts instead of images and easily change out fonts if needed</li>
+</ul>
+<h2>Our First CSS3 Animation</h2>
+<p>Let's create a simple CSS3 Animation to start playing around. I like using JSFiddle.net to share experiments, so I will include a link to my fiddle for anyone who wants to see it in action.</p>
+<p><b>Create the HTML</b><br />Note: If you are new to HTML, you will first want to get familiar with the structure of an HTML page. I recommend <a href="http://">Dive into HTML5</a> by Mike Pilgrim. If you use JSFiddle, you just have to paste the code below into the HTML section of the JSFiddle page.<br />Step 1: We need to create two elements to contain our CSS3 experiments. To keep things simple for now, let's create two div container tags and nest one inside the other.<br />I've also added in some paragraph tags with a few notes that go in the example.</p>
+<p>&lt;!--- Copy and paste from after this line to the closing comment to place this HTML block in JSFiddle --&gt;<br />&lt;p&gt;Watch out! If you're using IE9 or earlier browsers, you won't see any animation&lt;/p&gt;<br />&lt;!-- create a big div --&gt;<br />&lt;div id="bigbox"&gt;<br />&lt;!-- create a little div --&gt;<br />&lt;div id="littlebox"&gt;<br />&lt;p&gt; I love CSS3 Animations<br />&lt;/p&gt;<br />&lt;/div&gt;<br />&lt;!-- close thebig div --&gt;<br />&lt;/div&gt;<br />&lt;!-- close the little div --&gt;<br />&lt;p&gt;Animated elements go back to their first style when done.&lt;/p&gt;<br />&lt;!-- This is the closing comment of the HTML block --&gt;</p>
+<p><b>Add the CSS</b><br />The CSS styles define the attributes of the div boxes. How large they are in size, what background color they have and most importantly to us, animation properties. The CSS below will need to be pasted in the CSS section of the JSFiddle page.<br />I have given the bigger div the creative name of "#bigbox". Notice I've set the background color property to a light gray (#F2F1F1). Now comes the fun. We have to give the div an animation name. I've chosen "myanimateddiv". Next it is time to set the animation duration for the div. I have set it to 3 seconds. You'll also notice I had to specify a webkit-animation-name and webkit-animation-duration property for the animation to work properly in the Chrome, Safari and Opera browsers. We will need to set webkit properties for all other animation properties as well.</p>
+<p>#bigbox<br />{<br />width: 600px;<br />height: 200px;<br />background-color: #F2F1F1;<br />-webkit-animation-name: myanimateddiv; /* Chrome, Safari, Opera */<br />-webkit-animation-duration: 3s; /* Chrome, Safari, Opera */<br />animation-name: myanimateddiv;<br />animation-duration: 3s;<br />}</p>
+<p>#littlebox<br />{<br />display:block;<br />width:250px;<br />height:60px;<br />padding:20px;<br />margin:0, auto;<br />background-color: #66BFE2;<br />-webkit-animation-name: mylittlediv; /* Chrome, Safari, Opera */<br />-webkit-animation-duration: 5s; /* Chrome, Safari, Opera */<br />animation-name: mylittlediv;<br />animation-duration: 5s;<br />}</p>
+<p>p{ text-align:center;}<br />/* note: When animating, you must account for browsers with webkits and the standard keyframe declaration */</p>
+<p>@-webkit-keyframes myanimateddiv<br />{<br />from {background-color: #F2F1F1;}<br />to {background-color: #B8E986;}<br />}<br />/* Standard syntax */<br />@keyframes myanimateddiv<br />{<br />from {background-color: #F2F1F1;}<br />to {background-color: #B8E986;}<br />}</p>
+<p>/* Now that beginning and ending background color animations for the big div container have been set, I am going to set the properties for the animation of the littlebox container so that it changes color based on what percentage of time has passed in the animation */</p>
+<p>/*** a second smaller animated div corresponding to the littlebox container ***/<br />@-webkit-keyframes mylittlediv<br />{<br />0% {background-color: #66BFE2;}<br />25% {background-color: #F2F1F1;}<br />50% {background-color: #B8E986;}<br />100% {background-color: #F2F1F1;}<br />}</p>
+<p>@keyframes mylittlediv<br />{<br />0% {background-color: #66BFE2;}<br />25% {background-color: #F2F1F1;}<br />50% {background-color: #B8E986;}<br />100% {background-color: #F2F1F1;}<br />}</p>
+<p>View the Result in Action<br />A changing the background color of a box div and changing background color of a larger div</p>
+<p><a href="https://jsfiddle.net/pjo3yp58/6/">https://jsfiddle.net/pjo3yp58/6/</a></p>
+<p>Next time I'll show you how to change the location of the smaller div based on timing and we will play with text as well!</p>
