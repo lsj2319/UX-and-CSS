@@ -1,0 +1,96 @@
+#bigbox {
+  width: 600px;
+  height: 200px;
+  background-color: #F2F1F1;
+  -webkit-animation-name: myanimateddiv;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 6s;
+  /* Chrome, Safari, Opera */
+  animation-name: myanimateddiv;
+  animation-duration: 6s;
+}
+
+#littlebox {
+  display: block;
+  width: 250px;
+  height: 60px;
+  padding: 20px;
+  margin: 0, auto;
+  background-color: #66BFE2;
+  -webkit-animation-name: mylittlediv;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 5s;
+  /* Chrome, Safari, Opera */
+  animation-name: mylittlediv;
+  animation-duration: 5s;
+
+}
+
+p {
+  text-align: center;
+}
+
+** When animating,
+you must account for browsers with webkits & the standard keyframe declaration
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myanimateddiv {
+  from {
+    background-color: #F2F1F1;
+  }
+
+  to {
+    background-color: #B8E986;
+  }
+
+}
+
+/* Standard syntax */
+@keyframes myanimateddiv {
+  from {
+    background-color: #F2F1F1;
+  }
+
+  to {
+    background-color: #B8E986;
+  }
+
+}
+
+/*** a second animated div ***/
+@-webkit-keyframes mylittlediv {
+  0% {
+    background-color: #66BFE2;
+  }
+
+  25% {
+    background-color: #F2F1F1;
+  }
+
+  50% {
+    background-color: #B8E986;
+  }
+
+  100% {
+    background-color: #F2F1F1;
+  }
+}
+
+@keyframes mylittlediv {
+  0% {
+    background-color: #66BFE2;
+  }
+
+  25% {
+    background-color: #F2F1F1;
+  }
+
+  50% {
+    background-color: #B8E986;
+  }
+
+  100% {
+    background-color: #F2F1F1;
+  }
+}
+
