@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/css-test-002.css">
+  <title>Bouncing with CSS Animation Tutorial</title>
+</head>
+<body><h1>Bouncing with CSS Tutorial</h1><div class="css3-bouncer">
+  <p>In the first tutorial of this series we got our feet wet with CSS animations by changing the colors of two divs. This time we learn how to move objects and do a little text manipulation. That's right - moving objects through space using only CSS3 and HTML.</p>
+    <p>We will a couple create a couple of objects and bounce them.</p>
+    <p><span style="font-weight: 400;">You will need:</span></p>
+    <ul>
+    <li style="font-weight: 400;"><span style="font-weight: 400;">A modern browser (IE 10 +, Recent versions of Firefox, Google Chrome, or Safari, other browers your milage may vary)</span></li>
+    <li style="font-weight: 400;"><span style="font-weight: 400;">A text editor like Notepad or JSFiddle.net or Sublime</span></li>
+    <li style="font-weight: 400;"><span style="font-weight: 400;">A sense of adventure</span></li>
+    </ul>
+    <p> </p>
+    <h2>The HTML</h2>
+    <p>I've created this fork of a tutorial by Honkiat. I made two divs with two different classes. One box bounces slowly and the other bounces quickly. Last week we talked a little bit about percentages, and as you look at the CSS code you will see the timing of the bouncing is controlled using percentages. By changing those, we change the appearance of the bounce effect.  You can grab the code or see it in action on <a href="https://jsfiddle.net/ljordanatl/4Lkadc6p/3/">JSFiddle.net</a></p>
+    <p>Paste this HTML in between the body tags of an HTML file, or in your JSFiddle:<br />&lt;div class="css3-bouncer"&gt;<br />&lt;p&gt;This box bounces!!!&lt;/p&gt;<br />&lt;/div&gt;<br />&lt;div class="css3-bouncer2"&gt;<br />&lt;p&gt;This box bounces too!&lt;/p&gt;<br />&lt;/div&gt;<br />&lt;p&gt;<br />Based on a tutorial by Honkiat (http://www.hongkiat.com/blog/css3-bounce-effect/)<br />&lt;/p&gt;</p>
+    <h2>The CSS</h2>
+    <p>Paste the following in the CSS area of your JSFiddle.net account, or in a separate style sheet if you are testing it locally:</p>
+    <p>/* The box */<br />.css3-bouncer {<br />font-size: .8em;<br />font-family:Verdana, sans-serif;<br />width:7em;<br />text-align: center;<br />padding: 10px;<br />background-color: #f033af;<br />color: #fff;<br />box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);<br />text-transform: uppercase;<br />position: relative;<br />font-weight: bold;</p>
+    <p>-webkit-animation: bounce 1500ms ease-out;<br />-moz-animation: bounce 1500ms ease-out;<br />-o-animation: bounce 1500ms ease-out;<br />animation: bounce 1500ms ease-out;<br />}</p>
+    <p>.css3-bouncer2 {<br />display:block;<br />top:10px;<br />left:200px;<br />font-size: .8em;<br />font-family:Verdana, sans-serif;<br />width:7em;<br />text-align: center;<br />padding: 10px;<br />background-color: #003366;<br />color: #fff;<br />box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);<br />text-transform: uppercase;<br />position: relative;<br />font-weight: bold;</p>
+    <p>-webkit-animation: bounce 600ms ease-out;<br />-moz-animation: bounce 600ms ease-out;<br />-o-animation: bounce 600ms ease-out;<br />animation: bounce 600ms ease-out;<br />}<br />/* keyframes*/<br />/* Webkit, Chrome and Safari */</p>
+    <p>@-webkit-keyframes bounce {<br />0% {<br />-webkit-transform:translateY(-100%);<br />opacity: 0;<br />}<br />5% {<br />-webkit-transform:translateY(-70%);<br />opacity: 0;<br />}<br />15% {<br />-webkit-transform:translateY(0);<br />padding-bottom: 5px;<br />}<br />30% {<br />-webkit-transform:translateY(-50%);<br />}<br />40% {<br />-webkit-transform:translateY(0%);<br />padding-bottom: 6px;<br />}<br />50% {<br />-webkit-transform:translateY(-30%);<br />}<br />70% {<br />-webkit-transform:translateY(0%);<br />padding-bottom: 7px;<br />}<br />80% {<br />-webkit-transform:translateY(-15%);<br />}<br />90% {<br />-webkit-transform:translateY(0%);<br />padding-bottom: 8px;<br />}<br />95% {<br />-webkit-transform:translateY(-50%);<br />}<br />97% {<br />-webkit-transform:translateY(0%);<br />padding-bottom: 9px;<br />}<br />99% {<br />-webkit-transform:translateY(-5%);<br />}<br />100% {<br />-webkit-transform:translateY(0);<br />padding-bottom: 9px;<br />opacity: 1;<br />}<br />}</p>
+    <p>/* Mozilla Firefox 15 below */<br />@-moz-keyframes bounce {<br />0% {<br />-moz-transform:translateY(-100%);<br />opacity: 0;<br />}<br />5% {<br />-moz-transform:translateY(-70%);<br />opacity: 0;<br />}<br />15% {<br />-moz-transform:translateY(0);<br />padding-bottom: 5px;<br />}<br />30% {<br />-moz-transform:translateY(-50%);<br />}<br />40% {<br />-moz-transform:translateY(0%);<br />padding-bottom: 6px;<br />}<br />50% {<br />-moz-transform:translateY(-30%);<br />}<br />70% {<br />-moz-transform:translateY(0%);<br />padding-bottom: 7px;<br />}<br />80% {<br />-moz-transform:translateY(-15%);<br />}<br />90% {<br />-moz-transform:translateY(0%);<br />padding-bottom: 8px;<br />}<br />95% {<br />-moz-transform:translateY(-10%);<br />}<br />97% {<br />-moz-transform:translateY(0%);<br />padding-bottom: 9px;<br />}<br />99% {<br />-moz-transform:translateY(-5%);<br />}<br />100% {<br />-moz-transform:translateY(0);<br />padding-bottom: 9px;<br />opacity: 1;<br />}<br />}</p>
+    <p>/* Opera 12.0 */<br />@-o-keyframes bounce {<br />0% {<br />-o-transform:translateY(-100%);<br />opacity: 0;<br />}<br />5% {<br />-o-transform:translateY(-70%);<br />opacity: 0;<br />}<br />15% {<br />-o-transform:translateY(0);<br />padding-bottom: 5px;<br />}<br />30% {<br />-o-transform:translateY(-50%);<br />}<br />40% {<br />-o-transform:translateY(0%);<br />padding-bottom: 6px;<br />}<br />50% {<br />-o-transform:translateY(-30%);<br />}<br />70% {<br />-o-transform:translateY(0%);<br />padding-bottom: 7px;<br />}<br />80% {<br />-o-transform:translateY(-15%);<br />}<br />90% {<br />-o-transform:translateY(0%);<br />padding-bottom: 8px;<br />}<br />95% {<br />-o-transform:translateY(-10%);<br />}<br />97% {<br />-o-transform:translateY(0%);<br />padding-bottom: 9px;<br />}<br />99% {<br />-o-transform:translateY(-5%);<br />}<br />100% {<br />-o-transform:translateY(0);<br />padding-bottom: 9px;<br />opacity: 1;<br />}<br />}</p>
+    <p>/* W3, Opera 12+, Firefox 16+ */<br />@keyframes bounce {<br />0% {<br />transform:translateY(-100%);<br />opacity: 0;<br />}<br />5% {<br />transform:translateY(-70%);<br />opacity: 0;<br />}<br />15% {<br />transform:translateY(0);<br />padding-bottom: 5px;<br />}<br />30% {<br />transform:translateY(-50%);<br />}<br />40% {<br />transform:translateY(0%);<br />padding-bottom: 6px;<br />}<br />50% {<br />transform:translateY(-30%);<br />}<br />70% {<br />transform:translateY(0%);<br />padding-bottom: 7px;<br />}<br />80% {<br />transform:translateY(-15%);<br />}<br />90% {<br />transform:translateY(0%);<br />padding-bottom: 8px;<br />}<br />95% {<br />transform:translateY(-7%);<br />}<br />97% {<br />transform:translateY(0%);<br />padding-bottom: 9px;<br />}<br />99% {<br />transform:translateY(-3%);<br />}<br />100% {<br />transform:translateY(0);<br />padding-bottom: 9px;<br />opacity: 1;<br />}<br />}</p>
+    <p> </p>
+    <h2>What Can We Animate?</h2>
+    <p><span style="font-weight: 400;">What kinds of things could we animate? The specifications for the CSS Animation property on MDN (Mozilla Developers Network) or www.W3C.org reveal that the primary things we can animate are colors and text. </span></p>
+    <p><span style="font-weight: 400;">We can easily animate properties of an element such as:</span></p>
+    <ul>
+    <li><span style="font-weight: 400;">color (text)</span></li>
+    <li><span style="font-weight: 400;">background-color (block elements)</span></li>
+    <li><span style="font-weight: 400;">height </span></li>
+    <li><span style="font-weight: 400;">width</span></li>
+    </ul>
+    <p>Transforming elements by scaling and rotating them can be very useful. This also does not tax performance the way a lot of other animations can. Transform can be great for animating charts so they grow in different ways. Use the following properties:</p>
+    <ul>
+    <li style="font-weight: 400;"><span style="font-weight: 400;">transform: scale()</span></li>
+    <li style="font-weight: 400;"><span style="font-weight: 400;">transform: rotate()</span></li>
+    <li style="font-weight: 400;"><span style="font-weight: 400;">transform: translate()</span></li>
+    </ul>
+    <p>This week was a quick intro into moving objects using CSS Animations. Real life caught up with me a bit and I spent last night nursing a badly bruised toe from practicing TaeKwonDo when I should have been cooking up another example.  Play around with the example above, fork the it, and visit Hongkiat's site for more inspiration.<br />Lesson three will attack text manipulation in depth with some fun ways to make text more interactive without (hopefully) being annoying.</p>
+    <h2><span style="font-weight: 400;">Resources</span></h2>
+    <p><a href="https://daneden.github.io/animate.css/"><span style="font-weight: 400;">https://daneden.github.io/animate.css/</span></a></p>
+    <p> </p>
+    <p><a href="https://css-tricks.com/almanac/properties/a/animation/"><span style="font-weight: 400;">https://css-tricks.com/almanac/properties/a/animation/</span></a></p>
+    <p> </p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"><span style="font-weight: 400;">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations</span></a></p>
+    <p> </p>
+    <p><a href="https://www.smashingmagazine.com/2014/11/the-state-of-animation-2014/"><span style="font-weight: 400;">https://www.smashingmagazine.com/2014/11/the-state-of-animation-2014/</span></a></p>
+    <p> </p></body></html>
