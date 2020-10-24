@@ -1,0 +1,36 @@
+h2 {
+  color: green;
+  font-family: verdana;
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+animation-duration:2s;
+ animation-name: slideInRight;
+  -webkit-animation-duration:2s;
+  -webkit-animation-name: slideInRight;
+  margin-top: 100px;
+}
+@keyframes slideInRight{
+from {
+     margin-left:100%;
+     width:200%;
+}
+to { 
+     margin-left:0%;
+     width:100%;
+  } 
+
+}
+@-webkit-keyframes slideInRight{
+ from{ 
+     margin-left:100%;
+     width:200%;
+  } 
+
+  to { 
+     margin-left:0%;
+     width:100%;
+  } 
+
+}
